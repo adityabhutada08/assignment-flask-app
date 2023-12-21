@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Index </title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+    
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+    
+            .border {
+                border: 2px solid #333;
+                border-radius: 8px;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .header {
+                margin-bottom: 30px;
+            }
+    
+            .word {
+                font-size: 36px;
+            }
+    
+            .bottom {
+                font-size: 24px;
+                color: #007bff;
+                font-style: italic;
+            }
+    
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                font-family: 'Arial', sans-serif;
+            }
+    
+            .btn:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body></br></br> <br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Index</h1>
+             </div>
+                <h1 class="bottom">
+                     Hi {{session.username}}!!</br></br> Welcome to the index page...                
+                </h1></br>
+                <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+                <br><br><br>  <a href="{{ url_for('update') }}" class="btn">Update Username And Password</a>
+                <form id="delete"action="{{ url_for('delete') }}" method="post"> <br>
+                    <a href="#" onclick="myFunction()"  class="btn">Delete Account</a>
+                    
+
+                </form>
+          </div>
+        </div>
+        <script>
+            function myFunction() {
+                window.alert('Are you sure you want to delete your account?')
+                document.getElementById("delete").submit();
+            }
+        </script>
+    </body>
+</html>

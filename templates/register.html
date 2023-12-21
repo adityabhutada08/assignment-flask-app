@@ -1,0 +1,98 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Register </title>
+        <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f7f7f7;
+              color: #333;
+          }
+  
+          .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+          }
+  
+          .border {
+              border: 2px solid #333;
+              border-radius: 8px;
+              padding: 20px;
+              text-align: center;
+          }
+  
+          .header {
+              margin-bottom: 30px;
+          }
+  
+          .word {
+              font-size: 36px;
+          }
+  
+          .textbox {
+              width: 200px;
+              padding: 8px;
+              margin-bottom: 15px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+          }
+  
+          .btn {
+              display: inline-block;
+              padding: 10px 20px;
+              margin: 10px;
+              border: none;
+              border-radius: 5px;
+              background-color: #007bff;
+              color: #fff;
+              text-decoration: none;
+              font-weight: bold;
+              cursor: pointer;
+              transition: background-color 0.3s;
+          }
+  
+          .btn:hover {
+              background-color: #0056b3;
+          }
+  
+          .bottom {
+              font-size: 14px;
+              color: #666;
+          }
+  
+          .bottom a {
+              color: #007bff;
+              text-decoration: none;
+          }
+  
+          .bottom a:hover {
+              text-decoration: underline;
+          }
+      </style>
+
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Register</h1>
+             </div>
+            <h2 class="word">
+                <form action="{{ url_for('register') }}" method="post">
+                  <div class="msg">{{ msg }}</div>
+                    <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br>
+                    <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br>
+                    <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br>
+                    <input type="submit" class="btn" value="Sign Up" ></br>
+                </form>
+            </h2>
+            <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login In Here</a></p>
+          </div>
+        </div>
+    </body>
+</html>

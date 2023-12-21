@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f7f7f7;
+          color: #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+
+      form {
+          width: 300px;
+          padding: 20px;
+          border: 2px solid #ccc;
+          border-radius: 8px;
+          background-color: #fff;
+      }
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+
+      td {
+          padding: 8px;
+          text-align: left;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+          width: calc(100% - 20px);
+          padding: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      .msg {
+          margin-top: 10px;
+          color: red;
+      }
+
+      input[type="submit"] {
+          width: calc(100% - 20px);
+          padding: 10px;
+          margin-top: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: #007bff;
+          color: #fff;
+          text-decoration: none;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      input[type="submit"]:hover {
+          background-color: #0056b3;
+      }
+  </style>
+    
+</head>
+<body>
+    <form action="{{ url_for('update') }}" method="post" autocomplete="off">
+        <table >
+      <tr>
+        <td>New Username</td>
+        <td >
+            <label for="Q001"></label>
+                <input type="text" name="username" placeholder="New User Name" id="Q001" required></td>
+      </tr>
+      <tr>
+        <td>New Password</td>
+        <td>
+            <label for="Q002"></label>
+                <input type="text" name="password" placeholder="New Password" id="Q002" required></td>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+            <div class="msg">{{ msg }}</div>
+      <input type="submit" value="Next">
+        </form>
+</body>
+</html>
+

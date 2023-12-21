@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <style>
+        /* CSS for Admin Panel */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        a.delete-link {
+            color: red;
+        }
+
+        a.delete-link:hover {
+            color: darkred;
+        }
+
+        .btn {
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Admin</h1>
+    <p>This is your admin panel:</p>
+    
+    
+<!-- Display entries from the database -->
+<ul>
+    {% for entry in entries %}
+        <li>Entry ID: {{ entry[0] }}, Username: {{ entry[1] }}, Password: {{ entry[2] }}
+            <br><a href="/admin/edit/{{ entry[0] }}">Edit</a>
+            &nbsp; &nbsp; &nbsp; &nbsp;<a href="/admin/delete/{{ entry[0] }}" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
+            <br>
+        </li><br>
+    {% endfor %}
+</ul>
+
+    <p><a href="/logout"  class="btn">Logout</a></p>
+</body>
+</html>
